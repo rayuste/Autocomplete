@@ -20,5 +20,6 @@ export default {
   margin-top: 60px;
   margin: 0px auto;
   width: 100%;
+  font-family: "Arial", Helvetica, sans-serif;
 }
 </style>

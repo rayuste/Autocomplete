@@ -65,7 +65,7 @@ export default {
 .search-bar {
   font-size: 16px;
   line-height: 44px;
-  color: #757575;
+  color: rgb(41, 40, 40);
   height: 44px;
   border-radius: 10px;
   border: 1px solid lightgray;
@@ -93,33 +93,38 @@ export default {
   position:relative;
   background: #fff;
   border-radius: 10px;
+  box-shadow: 0 0 10px #eceaea;
   left: 0;
   right: 0;
   width:50%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
 }
 
 .suggestions ul {
-  list-style-type: none;
-  text-align: left;
-  padding-left: none;
-  left: 0;
-
+  content: "\2022";
+  margin-right: 10px;
+  display: inline;
+  vertical-align: middle;
+  font-weight: normal;
 }
 
 .suggestions ul li {
-  border-bottom: 1px solid lightgray;
-  padding: 10px;
-  cursor: pointer;
-  pointer-events: auto;
-  text-align: left;
-  bottom: 0;
-  color: rgb(41, 40, 40);
   font-size: 16px;
+  color: rgb(41, 40, 40);
+  line-height: 44px;
+  height: 44px;
+  margin: auto 0;
+  overflow: hidden;
+  padding-inline-start: 44px;
+  right: 44px;
   left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: initial;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
 
 .suggestions ul li:hover {
