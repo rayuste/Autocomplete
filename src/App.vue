@@ -1,16 +1,16 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Hello World"/>
+  <div>
+    <search-bar></search-bar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchBar from './components/SearchBar.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    'search-bar': SearchBar
   }
 }
 </script>
