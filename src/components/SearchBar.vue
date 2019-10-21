@@ -7,7 +7,7 @@
       placeholder="Search dictionary"
       class="search-bar"
     />
-    <div class="suggestions" v-show="inputEntered">
+    <div class="suggestions" v-show="showSuggestions">
       <ul>
         <li
           v-for="(suggestion, index) in suggestions"
@@ -40,16 +40,16 @@ export default {
         .then(suggestions => {
           self.suggestions = suggestions.data
           if (self.suggestions.length == 0) {
-            self.inputEntered = false
+            self.showSuggestions = false
           } else {
-            self.inputEntered = true
+            self.showSuggestions = true
           }
         })
     },
     suggestionClicked (index) {
       this.search = this.suggestions[index]
       this.suggestions = []
-      this.inputEntered = false
+      this.showSuggestions = false
     }
   }
 }
@@ -65,7 +65,7 @@ export default {
 .search-bar {
   font-size: 16px;
   line-height: 44px;
-  color: rgb(117, 117, 117);
+  color: #757575;
   height: 44px;
   border-radius: 10px;
   border: 1px solid lightgray;
@@ -120,5 +120,10 @@ export default {
   color: rgb(41, 40, 40);
   font-size: 16px;
   left: 0;
+}
+
+.suggestions ul li:hover {
+  background-color: #eeeded
+
 }
 </style>
