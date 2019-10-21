@@ -12,6 +12,7 @@
         <li
           v-for="(suggestion, index) in suggestions"
           :key="index"
+          @click="suggestionClicked(index)"
         >
           {{ suggestion }}
         </li>
@@ -26,7 +27,6 @@ import client from 'api-client'
 export default {
   data () {
     return {
-      inputEntered: false,
       search: '',
       suggestions: []
     }
@@ -45,6 +45,11 @@ export default {
             self.inputEntered = true
           }
         })
+    },
+    suggestionClicked (index) {
+      this.search = this.suggestions[index]
+      this.suggestions = []
+      this.inputEntered = false
     }
   }
 }
