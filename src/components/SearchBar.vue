@@ -14,7 +14,7 @@
           :key="index"
           @click="suggestionClicked(index)"
         >
-          {{ suggestion }}
+          <span v-html="boldSearchedCharacters(suggestion)"></span>
         </li>
       </ul>
     </div>
@@ -50,6 +50,16 @@ export default {
       this.search = this.suggestions[index]
       this.suggestions = []
       this.showSuggestions = false
+    },
+    boldSearchedCharacters(words) {
+        if(this.search === '') { return words }
+        if(typeof(words) === 'number') {
+            words = '' + words + ''
+        }
+        var splitIndex = this.search.length
+        var boldCharacters = words.slice(0, splitIndex)
+        var nonBoldCharacters = words.slice(splitIndex, words.length)
+        return '<span style="font-weight: bold;">' + boldCharacters + '</span>' + nonBoldCharacters
     }
   }
 }
