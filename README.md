@@ -1,5 +1,11 @@
 # auto-complete
 
+
+## Prerequisites (and Versions)
+* node v8.9.4
+* npm 6.0.0
+
+
 ## Project setup
 ```
 npm install
